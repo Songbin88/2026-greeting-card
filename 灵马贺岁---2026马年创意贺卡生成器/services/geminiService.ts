@@ -3,7 +3,7 @@ import { GoogleGenAI, Type } from "@google/genai";
 import { GeminiResponse } from "../types";
 
 export const generateGreeting = async (sender: string, receiver: string): Promise<GeminiResponse> => {
-  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+  const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
   
   const prompt = `
     你是一位精通中华传统文化和现代创意的文案大师。
